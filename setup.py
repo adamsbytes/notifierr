@@ -8,9 +8,10 @@ install_requires = [
 
 setup(
     name="notifierr",
-    version='0.1.3',
+    version='0.1.4',
     description="An API server to receive webhook events from Sonarr and Radarr and send SMS messages.",
     long_description=open("README.md").read(),
+    long_description_content_type='text/markdown',
     url="https://github.com/adamsbytes/notifierr",
     author="adamsbytes",
     author_email="adamsbytescode@gmail.com",
@@ -23,13 +24,20 @@ setup(
         ],
     },
     scripts=[],
-    packages=find_packages(where="notifierr"),
+    packages=['notifierr'],
     package_dir={"": "notifierr"},
     include_package_data=True,
     classifiers=[
         "Development Status :: 4 - Beta",
         "Framework :: Flask",
         "License :: OSI Approved :: GNU Lesser General Public License v3 (LGPLv3)",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.6",
+        "Programming Language :: Python :: 3.7",
+        "Programming Language :: Python :: 3.8",
+        "Programming Language :: Python :: 3.9",
+        "Programming Language :: Python :: 3.10",
         "Topic :: Home Automation",
     ],
 )
