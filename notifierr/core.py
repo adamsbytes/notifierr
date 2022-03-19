@@ -2,8 +2,6 @@
 import json
 import os
 
-import strings
-import sms.handler
 from flask import (
     Flask,
     Blueprint,
@@ -12,12 +10,14 @@ from flask import (
     make_response,
     request
 )
-from version import __version__
+from . import strings
+from .sms import handler
+from .version import __version__
 
 api = Blueprint('api', __name__)
 app = Flask('notifierr')
 app.config.from_pyfile(os.getenv('NOTIFIERR_CONFIG_FILEPATH', 'config.py'))
-smshandler = sms.handler.SMSHandler(provider=str(app.config['SMS_PROVIDER']).lower())
+smshandler = handler.SMSHandler(provider=str(app.config['SMS_PROVIDER']).lower())
 logger = app.logger
 
 @api.before_request
@@ -42,6 +42,7 @@ def get_version():
     methods=['POST']
 )
 def send_movie_message(uid):
+    ''' Responds to POST /message/movie/{uid} by sending an SMS to the associated number'''
     try:
         server_name = app.config['MEDIA_SERVER_NAME']
         requestdata = json.loads(request.data)
@@ -58,9 +59,9 @@ def send_movie_message(uid):
                 receiver=number,
                 message=smsmessage
             )
-    except Exception as e:
+    except Exception as err:
         result = make_response(
-            f'Failure: {str(e)}',
+            f'Failure: {str(err)}',
             400
         )
     else:
@@ -103,15 +104,15 @@ def send_tv_message(uid):
                 server_name=server_name
             )
         else:
-            raise(ValueError)
+            raise ValueError
         for number in app.config['CONTACTS'][uid]:
             smshandler.send_message(
                 receiver=number,
                 message=smsmessage
             )
-    except Exception as e:
+    except Exception as err:
         result = make_response(
-            f'Failure: {str(e)}',
+            f'Failure: {str(err)}',
             400
         )
     else:

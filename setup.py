@@ -1,6 +1,8 @@
 ''' The application setup.py file '''
 from setuptools import find_packages, setup
 
+SHORT_DESCRIPTION = \
+    "An API server to receive webhook events from Sonarr and Radarr and send SMS messages."
 install_requires = [
     "flask > 2.0.0, < 3.0.0",
     "twilio",
@@ -8,8 +10,8 @@ install_requires = [
 
 setup(
     name="notifierr",
-    version='0.1.5',
-    description="An API server to receive webhook events from Sonarr and Radarr and send SMS messages.",
+    version='0.1.6',
+    description=SHORT_DESCRIPTION,
     long_description=open("README.md").read(),
     long_description_content_type='text/markdown',
     url="https://github.com/adamsbytes/notifierr",
