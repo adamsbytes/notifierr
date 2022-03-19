@@ -24,7 +24,7 @@ setup(
         ],
     },
     scripts=[],
-    packages=find_packages(where="notifierr"),
+    packages=['notifierr'],
     package_dir={"": "notifierr"},
     include_package_data=True,
     classifiers=[
