@@ -10,7 +10,7 @@ install_requires = [
 
 setup(
     name="notifierr",
-    version='0.1.8',
+    version='0.1.9',
     description=SHORT_DESCRIPTION,
     long_description=open("README.md").read(),
     long_description_content_type='text/markdown',

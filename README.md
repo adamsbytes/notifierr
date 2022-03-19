@@ -30,12 +30,15 @@ The following environment variables are required:
 
 
 ### Starting the Server
+
+__NOTE__: pip installs may need to add `~/.local/bin` to their PATH
+
 For pip installs:
 ```sh
 notifierr --host 0.0.0.0 --port 8181
 ```
 
-For manual installs:
+To manually start the server:
 ```sh
 $appdir/cli.py --host 0.0.0.0 --port 8181
 ```
