@@ -1,6 +1,5 @@
 ''' The application setup.py file '''
 from setuptools import find_packages, setup
-from notifierr.version import __version__
 
 install_requires = [
     "flask > 2.0.0, < 3.0.0",
@@ -9,7 +8,7 @@ install_requires = [
 
 setup(
     name="notifierr",
-    version=__version__,
+    version='0.1.0',
     description="An API server to receive webhook events from Sonarr and Radarr and send SMS messages.",
     long_description=open("README.md").read(),
     url="https://github.com/adamsbytes/notifierr",
