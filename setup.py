@@ -3,12 +3,12 @@ from setuptools import find_packages, setup
 
 install_requires = [
     "flask > 2.0.0, < 3.0.0",
-    "twilio == 6.4.5",
+    "twilio",
 ]
 
 setup(
     name="notifierr",
-    version='0.1.2',
+    version='0.1.3',
     description="An API server to receive webhook events from Sonarr and Radarr and send SMS messages.",
     long_description=open("README.md").read(),
     url="https://github.com/adamsbytes/notifierr",
