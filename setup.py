@@ -8,7 +8,7 @@ install_requires = [
 
 setup(
     name="notifierr",
-    version='0.1.0',
+    version='0.1.1',
     description="An API server to receive webhook events from Sonarr and Radarr and send SMS messages.",
     long_description=open("README.md").read(),
     url="https://github.com/adamsbytes/notifierr",

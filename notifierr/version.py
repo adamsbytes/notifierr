@@ -1,2 +1,2 @@
 ''' Records the application version for various imports '''
-__version__='0.1.0'
+__version__='0.1.1'
