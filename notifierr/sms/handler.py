@@ -5,8 +5,8 @@ class SMSHandler():
     ''' An agnostic interface to multiple SMS providers '''
     def __init__(self, provider) -> None:
         provider_module = importlib.import_module(
-            name=f'.providers.{provider}',
-            package='sms'
+            name=f'sms.providers.{provider}',
+            package='notifierr'
         )
         self.client = provider_module.ProviderClient()
 
