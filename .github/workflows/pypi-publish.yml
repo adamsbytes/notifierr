@@ -21,17 +21,20 @@ jobs:
           python-version: 3.9
       - name: Build wheel and source tarball
         run: python setup.py sdist
-      - name: Create GitHub release
-        uses: actions/create-release@v1
-        id: create_release
-        with:
-          draft: false
-          prerelease: false
-          release_name: ${{ steps.vars.outputs.version }}
-          tag_name: ${{ github.ref }}
-          body_path: CHANGELOG.md
       - name: Publish distribution to PyPi
         uses: pypa/gh-action-pypi-publish@master
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}
+      - name: Build other artifacts
+        run: python setup.py bdist_egg
+      - name: Create GitHub release
+        uses: softprops/action-gh-release@v1
+        id: create_release
+        with:
+          draft: false
+          prerelease: false
+          tag_name: ${{ steps.vars.outputs.version }}
+          body_path: CHANGELOG.md
+          with:
+            files: dist/*
     
