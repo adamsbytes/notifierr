@@ -2,8 +2,8 @@
 import argparse
 import sys
 
-from core import app
-from version import __version__
+from .core import app
+from .version import __version__
 
 def main():
     ''' Provides an entrypoint into the app via CLI '''
