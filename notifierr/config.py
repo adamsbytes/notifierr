@@ -1,0 +1,18 @@
+''' notifierr configuration variables '''
+# PLEASE EDIT THE 4 LINES BELOW PRIOR TO DEPLOYMENT
+TESTING = True
+DEBUG = True
+FLASK_ENV = 'development'
+SECRET_KEY = 'GDrfDBKMuD'
+
+# MEDIA SERVER IDENTIFIER
+MEDIA_SERVER_NAME = 'Plex'
+
+# SMS PROVIDER SETTINGS
+SMS_PROVIDER = 'Twilio'
+
+# SMS CONTACTS
+CONTACTS = {
+    'uid1': ['+15558675309', '+15555555555'],
+    'uid2': ['+15551234567'],
+}
