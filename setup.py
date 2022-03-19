@@ -15,6 +15,7 @@ setup(
     url="https://github.com/adamsbytes/notifierr",
     author="adamsbytes",
     author_email="adamsbytescode@gmail.com",
+    python_requires=">=3.6.0",
     license="GPLv3",
     install_requires=install_requires,
     entry_points={
