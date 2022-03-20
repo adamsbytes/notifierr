@@ -1,3 +1,4 @@
-* Add automated GitHub release and artifact upload
-* Upload tagged package to PyPi
-* Minor bug fixes
+* Fixed: CLI would incorrectly parse options
+* Improved README to better explain installation and usage
+* Added images folder with screenshots of Radarr/Sonarr setup
+* Updated dependencies used in Github workflow
