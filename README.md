@@ -20,7 +20,7 @@ python3 setup.py install
 You must edit `notifierr/config.py` with your own values before starting the API server. You'll also need to set some environment variables, depending on which SMS provider you're using.
 
 #### *Twilio SMS provider*
-The following environment variables are required:
+The following environment variables are required and can be found in your Twilio console:
 
 `TWILIO_ACCOUNT_SID`: Twilio account SID
 
