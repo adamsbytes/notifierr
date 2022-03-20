@@ -12,7 +12,6 @@ def main():
     )
 
     parser.add_argument(
-        '-h',
         '--host',
         default='localhost',
         type=str,
@@ -20,7 +19,6 @@ def main():
     )
 
     parser.add_argument(
-        '-p',
         '--port',
         default=8181,
         type=int,
@@ -28,7 +26,6 @@ def main():
     )
 
     parser.add_argument(
-        '-v',
         '--version',
         action='store_true',
         help='Print the version of the notiferr server'
