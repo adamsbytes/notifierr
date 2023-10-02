@@ -4,7 +4,7 @@ from setuptools import find_packages, setup
 SHORT_DESCRIPTION = \
     "An API server to receive webhook events from Sonarr and Radarr and send SMS messages."
 install_requires = [
-    "flask > 2.0.0, < 3.0.0",
+    "flask > 2.0.0, < 4.0.0",
     "twilio",
 ]
 
